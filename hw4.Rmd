@@ -1,0 +1,18 @@
+---
+title: "Shibei Xu website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+## This is shibei's introduction page
+
+![](https://www.publichealth.columbia.edu/sites/default/files/styles/hero_1500x632/public/about-1500x632-5.jpg?itok=UNDBrNYh)
+
+## Here is the Resume page
+* [About me](aboutme.html)
+
+## Link for my linkedin page
+* [Linkedin](https://www.linkedin.com/in/shibei-xu-136414157/)
