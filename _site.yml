@@ -1,0 +1,14 @@
+name: "Yay internet!"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "About me"
+      href: aboutme.html
+    - icon: fa-envelope fa-lg
+      href: mailto:<x.shibei@columbia.edu>
+    - icon: fa-github fa-lg
+      href: http://github.com/shibeixxu/
+output:
+  html_document:
+    theme: cerulean
