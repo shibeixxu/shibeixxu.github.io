@@ -1,0 +1,55 @@
+---
+title: "dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+data("instacart")
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+
+### Bar chart
+
+```{r}
+  instacart %>%
+  group_by(department)%>%
+  summarize(n_obs = n())%>%
+  mutate(department = fct_reorder(department, n_obs))%>%
+  plot_ly(x = ~department, y = ~n_obs, color = ~department, type = "bar", colors = "viridis")
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Scatterplot
+
+```{r}
+ instacart %>%
+  filter(department=="snacks")%>%
+  group_by(aisle)%>%
+  summarize(n_obs = n())%>%
+  plot_ly(x = ~ aisle, y = ~n_obs,  type = "scatter", mode = "markers",
+    color = ~aisle,alpha = 0.5)
+```
+
+### Boxplot
+
+```{r}
+instacart%>%
+  group_by(order_dow)%>%
+  filter(department=="deli")%>%
+  summarize(n_obs = n())%>%
+  plot_ly(
+    x = ~order_dow, y = ~n_obs, type = "scatter", mode = "lines", alpha = 0.5)
+```
+
